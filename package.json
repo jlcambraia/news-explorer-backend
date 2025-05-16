@@ -1,0 +1,20 @@
+{
+  "name": "news-explorer-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API backend para o projeto News Explorer, com autenticação e gerenciamento de artigos.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "lint": "npx eslint ."
+  },
+  "author": "João Luiz Cambraia",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
+}
