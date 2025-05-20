@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -11,7 +12,9 @@ import logger from "./middlewares/logger.js";
 import NotFoundError from "./errors/not-found-err.js";
 import errorHandler from "./errors/error-handler.js";
 
-const { PORT = 3000 } = process.env;
+dotenv.config();
+
+const { PORT = 3000, MONGO_URL } = process.env;
 
 const app = express();
 
@@ -21,7 +24,7 @@ app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://127.0.0.1:27017/newsexplorer");
+mongoose.connect(MONGO_URL);
 
 app.use(logger.requestLogger);
 
