@@ -6,25 +6,10 @@ import BadRequestError from "../errors/bad-request-err.js";
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 
-export const getUsers = (req, res, next) => {
-  User.find({})
-    .then((users) => res.send({ data: users }))
-    .catch(next);
-};
-
 export const getUser = (req, res, next) => {
   User.findById(req.user._id)
     .orFail(() => {
       throw new NotFoundError("Usuário não encontrado.");
-    })
-    .then((user) => res.send({ data: user }))
-    .catch(next);
-};
-
-export const getCurrentUser = (req, res, next) => {
-  User.findById(req.user._id)
-    .orFail(() => {
-      throw new NotFoundError("Usuário não encontrado");
     })
     .then((user) => res.send({ data: user }))
     .catch(next);
