@@ -10,7 +10,7 @@ export default (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith("Bearer ")) {
-    throw new ForbiddenError("Autorização necessária");
+    return next(new ForbiddenError("Autorização necessária"));
   }
 
   const token = authorization.replace("Bearer ", "");
