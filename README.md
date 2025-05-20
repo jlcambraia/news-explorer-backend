@@ -1,6 +1,6 @@
 # News Explorer - Back-end
 
-Este é o back-end da aplicação **News Explorer**, desenvolvido como parte da Fase 2 do bootcamp da TripleTen. A API foi construída com Node.js, Express e MongoDB, com suporte a autenticação JWT, registro e login de usuários, bem como salvamento e remoção de artigos de notícias personalizados por usuário.
+Este é o back-end da aplicação **News Explorer**. A API foi construída com **Node.js**, **Express** e **MongoDB**, com suporte a autenticação JWT, registro e login de usuários, bem como salvamento e remoção de artigos de notícias personalizados por usuário.
 
 ## Funcionalidades da API
 
