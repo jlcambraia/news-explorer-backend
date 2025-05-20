@@ -2,6 +2,10 @@
 
 Este é o back-end da aplicação **News Explorer**. A API foi construída com **Node.js**, **Express** e **MongoDB**, com suporte a autenticação JWT, registro e login de usuários, bem como salvamento e remoção de artigos de notícias personalizados por usuário.
 
+## Link do Projeto
+
+- **Backend (API):** [https://api.news-explorer-tt.mooo.com](https://api.news-explorer-tt.mooo.com)
+
 ## Funcionalidades da API
 
 - Registro e login de usuários com autenticação JWT
