@@ -1,8 +1,11 @@
+import dotenv from "dotenv";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 import NotFoundError from "../errors/not-found-err.js";
 import BadRequestError from "../errors/bad-request-err.js";
+
+dotenv.config();
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 
@@ -15,17 +18,18 @@ export const getUser = (req, res, next) => {
     .catch(next);
 };
 
-export const createUser = async (req, res, next) => {
+export const createUser = (req, res, next) => {
   const { email, password, name } = req.body;
 
   if (!email && !password && !name) {
     throw new BadRequestError("Dados inválidos fornecidos");
   }
 
-  const hash = await bcrypt.hash(password, 10);
-  User.create({ email, password: hash, name })
-    .then((user) => res.send({ data: user }))
-    .catch(next);
+  return bcrypt.hash(password, 10).then((hash) => {
+    User.create({ email, password: hash, name })
+      .then((user) => res.send({ data: user }))
+      .catch(next);
+  });
 };
 
 export const login = (req, res, next) => {
