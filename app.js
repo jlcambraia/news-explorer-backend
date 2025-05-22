@@ -14,7 +14,8 @@ import errorHandler from "./errors/error-handler.js";
 
 dotenv.config();
 
-const { PORT = 3000, MONGO_URL } = process.env;
+const { PORT = 3000, MONGO_URL = "mongodb://127.0.0.1:27017/newsexplorer" } =
+  process.env;
 
 const app = express();
 
