@@ -4,7 +4,7 @@ Este é o back-end da aplicação **News Explorer**. A API foi construída com *
 
 ## Link do Projeto
 
-- **Backend (API):** [https://api.news-explorer-tt.mooo.com](https://api.news-explorer-tt.mooo.com)
+- **Backend (API):** [Clique aqui](https://news-explorer-backend-954v.onrender.com)
 
 ## Funcionalidades da API
 
